@@ -26,9 +26,9 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             """city instance related to the state getters"""
-            madina-qayma = []
+            madina_qayma = []
             all_cities = models.storage.all(City)
             for city in all_cities.values():
                 if city.state_id == self.id:
-                    madina-qayma.append(city)
-            return madina-qayma
+                    madina_qayma.append(city)
+            return madina_qayma
