@@ -1,4 +1,6 @@
-ass dbstorage to be contained
+#!/usr/bin/python3
+"""
+the class dbstorage to be contained
 """
 
 import models
