@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """ this file represent the console.py """
-
+import models
 import cmd
 from datetime import datetime
-import models
 from models.amenity import Amenity
 from models.base_model import BaseModel
 from models.city import City
