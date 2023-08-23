@@ -3,7 +3,6 @@
 the class dbstorage to be contained
 """
 
-import models
 from models.amenity import Amenity
 from models.base_model import BaseModel, Base
 from models.city import City
