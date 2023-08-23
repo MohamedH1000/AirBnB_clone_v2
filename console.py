@@ -114,6 +114,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, args):
+<<<<<<< HEAD
         """
 	update the create function in this file
         """
@@ -147,6 +148,21 @@ class HBNBCommand(cmd.Cmd):
         except NameError:
             print("** class doesn't exist **")
 
+=======
+        """ Create an object of any class"""
+        args = arg.split()
+        if len(args) == 0:
+            print("** class name missing **")
+            return False
+        if args[0] in classes:
+            n_d = self._key_value_parser(args[1:])
+            inst = classes[args[0]](**n_d)
+        else:
+            print("** class doesn't exist **")
+            return False
+        print(inst.id)
+        inst.save()
+>>>>>>> 4f55acba79c1b91034923d2d7ad05e02fbaedf72
 
     def help_create(self):
         """ Help information for the create method """
