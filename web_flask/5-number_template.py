@@ -16,6 +16,7 @@ def hello():
     """
     return "Hello HBNB!"
 
+
 @app.route('/hbnb', strict_slashes=False)
 def hbnb_route():
     """
@@ -23,12 +24,14 @@ def hbnb_route():
     """
     return "HBNB"
 
+
 @app.route('/c/<text>', strict_slashes=False)
 def c_route(text):
     """
     display the value of tect after the vriable c
     """
     return "C {}".format(text.replace('_', ' '))
+
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
@@ -40,6 +43,7 @@ def python_route(text="is_cool"):
     """
     return "Python {}".format(text.replace('_', ' '))
 
+
 @app.route('/number/<int:n>', strict_slashes=False)
 def number_route(n):
     """
@@ -48,6 +52,7 @@ def number_route(n):
     """
     return "{} is a number".format(n)
 
+
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template_route(n):
     """
@@ -55,6 +60,7 @@ def number_template_route(n):
     only and only if n is integer
     """
     return render_template('5-number.html', n=n)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
