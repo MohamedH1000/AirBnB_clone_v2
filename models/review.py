@@ -1,24 +1,27 @@
-#!/usr/bin/python
-""" holds class Review"""
-import models
-from models.base_model import BaseModel, Base
+#!/usr/bin/python3
+
+"""
+A module that defines ORM class for Review table
+"""
 from os import getenv
-import sqlalchemy
-from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy import Column, ForeignKey
+from sqlalchemy import String
+from models.base_model import Base, BaseModel
 
 
 class Review(BaseModel, Base):
-    """A review representation"""
-    if models.storage_t == 'db':
-        __tablename__ = 'reviews'
-        place_id = Column(String(60), ForeignKey('places.id'), nullable=False)
-        user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
-        text = Column(String(1024), nullable=False)
-    else:
-        place_id = ""
-        user_id = ""
-        text = ""
+    """
+    Defines attributes for Review table
+    """
+    __tablename__ = 'reviews'
 
-    def __init__(self, *args, **kwargs):
-        """Review to be initialized"""
-        super().__init__(*args, **kwargs)
+    if getenv('HBNB_TYPE_STORAGE') == 'db':
+        text = Column(String(1024), nullable=False)
+        place_id = Column(
+            String(60), ForeignKey('places.id'), nullable=False)
+        user_id = Column(
+            String(60), ForeignKey('users.id'), nullable=False)
+    else:
+        text = ''
+        place_id = ''
+        user_id = ''
