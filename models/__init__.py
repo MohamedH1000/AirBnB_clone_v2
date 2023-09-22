@@ -10,6 +10,9 @@ from .place import Place
 from .state import State
 from .review import Review
 from .amenity import Amenity
+import pymysql
+
+pymysql.install_as_MySQLdb()
 
 if getenv('HBNB_TYPE_STORAGE') == 'db':
     from models.engine.db_storage import DBStorage
