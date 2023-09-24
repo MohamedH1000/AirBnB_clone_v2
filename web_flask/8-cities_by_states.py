@@ -10,6 +10,14 @@ from flask import render_template
 app = Flask(__name__)
 
 
+@app.teardown_appcontext
+def close_db(exception=None):
+    """
+    after each request remove session sqlalchemy
+    """
+    storage.close()
+
+
 @app.route('/cities_by_states', strict_slashes=False)
 def states_list_to_cities():
     """
@@ -17,14 +25,6 @@ def states_list_to_cities():
     """
     states = storage.all("State").values()
     return render_template("8-cities_by_states.html", states=states)
-
-
-@app.teardown_appcontext
-def close_db(exception=None):
-    """
-    after each request remove session sqlalchemy
-    """
-    storage.close()
 
 
 if __name__ == "__main__":
