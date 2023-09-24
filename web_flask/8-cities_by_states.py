@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 
 @app.teardown_appcontext
-def close_db(exception=None):
+def close_db(self):
     """
     after each request remove session sqlalchemy
     """
