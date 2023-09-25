@@ -16,9 +16,14 @@ pymysql.install_as_MySQLdb()
 """install mysqlbd to execute data from database"""
 
 if getenv('HBNB_TYPE_STORAGE') == 'db':
+    """module for mysql to import data from"""
     from models.engine.db_storage import DBStorage
     storage = DBStorage()
+    """function for storing data"""
 else:
+    """this is file for storing data in python"""
     from models.engine.file_storage import FileStorage
     storage = FileStorage()
+    """import data from this filestorage file"""
 storage.reload()
+"""to reload data from this function"""
