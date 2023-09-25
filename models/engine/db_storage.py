@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 A module that defines extensively the database storage for this project
 """
