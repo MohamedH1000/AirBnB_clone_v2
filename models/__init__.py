@@ -13,6 +13,7 @@ from .amenity import Amenity
 import pymysql
 
 pymysql.install_as_MySQLdb()
+"""install mysqlbd to execute data from database"""
 
 if getenv('HBNB_TYPE_STORAGE') == 'db':
     from models.engine.db_storage import DBStorage
