@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 """
-a flask web application to be started
-by this script and to check the server
-ability to list the states in the order
-that is wanted
+    a flask web application to be started by this script
 """
 
 from flask import Flask
