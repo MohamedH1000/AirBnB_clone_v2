@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 a flask web application to be started by this script
+and to check the server
 """
 
 from flask import Flask
