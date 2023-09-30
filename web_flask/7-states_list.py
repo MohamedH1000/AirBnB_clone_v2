@@ -2,10 +2,10 @@
 """
     a flask web application to be started by this script
 """
-
 from flask import Flask
 from models import storage
 from flask import render_template
+
 
 app = Flask(__name__)
 
